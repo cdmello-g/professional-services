@@ -67,8 +67,8 @@ spec:
 {% if (cluster_type != 'admin') %}
       ingressVIP: {{ ingress_vip }}
 {% if lb_mode is defined and lb_mode == 'bundled' %}
-{% for lb_address in lb_address_pool %}
     addressPools:
+{% for lb_address in lb_address_pool %}
     - name: pool{{loop.index}}
       addresses:
       - {{ lb_address }}
